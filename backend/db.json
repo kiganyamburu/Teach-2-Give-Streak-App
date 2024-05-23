@@ -1,0 +1,52 @@
+{
+  "habits": [
+    {
+      "id": "0c5a",
+      "name": "Smoking",
+      "type": "negative",
+      "frequency": "5 cigarettes a day",
+      "goal": "To reduce the frequency and eventually stop smoking",
+      "priority": "high",
+      "habitImpact": "Low health",
+      "goalImpact": "Healthier life",
+      "start": "2024-04-29",
+      "imagePath": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcY4XzB7hlAqR1CaBIiZJmQNGAmCDisXhRGnlNO8MGFg&s"
+    },
+    {
+      "id": "db73",
+      "name": "Coding",
+      "type": "positive",
+      "frequency": "8hrs a day",
+      "goal": "To get 80hrs a week",
+      "priority": "high",
+      "habitImpact": "Take long to achieve goal",
+      "goalImpact": "Achieve goal sooner",
+      "start": "2022-08-25",
+      "imagePath": "https://www.hubspot.com/hubfs/how-to-start-coding-1.jpg"
+    },
+    {
+      "id": "d987",
+      "name": "Alcohol",
+      "type": "negative",
+      "frequency": "3 times a week",
+      "goal": "To stop taking alcohol",
+      "priority": "medium",
+      "habitImpact": "Financial drainage",
+      "goalImpact": "Avoid wasting money",
+      "start": "2022-04-04",
+      "imagePath": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI1HMIKP50Sro3x5KtUxzq3jh2rbouHJJFjep-CDB7rw&s"
+    },
+    {
+      "id": "b5a6",
+      "name": "Healthy eating",
+      "type": "positive",
+      "frequency": "Rarely",
+      "goal": "5 times a week",
+      "priority": "medium",
+      "habitImpact": "Less nourishment",
+      "goalImpact": "Healthy lifestyle",
+      "start": "2024-06-01",
+      "imagePath": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRX99GW5PPFG233dgV48sodnk3Sbc_tY_eoB6DiJ9KkqQ&s"
+    }
+  ]
+}

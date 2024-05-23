@@ -1,31 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Habit Tracker</title>
+    <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <h1>Welcome to My Streak Counter</h1>
-    <div id="streaks">
-      <div class="streak-item">
-        <span class="streak-date">Act: 2022-06-07</span>
-        <span class="streak-name">Smoking</span>
-      </div>
-      <div class="streak-item">
-        <span class="streak-date">Cycling: 2022-07-06</span>
-        <span class="streak-name">Cycling</span>
-      </div>
-      <div class="streak-item">
-        <span class="streak-date">2022-07-14</span>
-        <span class="streak-name">Healthy Eating</span>
-      </div>
-      <div class="streak-item">
-        <span class="streak-date">2022-07-14</span>
-        <span class="streak-name">Enough Sleep</span>
-      </div>
-      <div class="streak-item">
-        <span class="streak-date">2002-07-14</span>
-        <span class="streak-name">Taking Walks</span>
-      </div>
-    </div>
+    <main>
+      <div id="addHabitForm"></div>
+      <section id="hero">
+        <div id="hero-bg">
+          <button id="addHabitBtn">
+            <img src="./assets/create.svg" alt="" />
+          </button>
+          <h2>Welcome to My Stream Counter</h2>
+        </div>
+      </section>
+      <div id="habitList"></div>
+    </main>
+    <script src="./dist/index.js"></script>
   </body>
 </html>
