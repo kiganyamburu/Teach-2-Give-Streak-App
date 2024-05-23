@@ -1,21 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Streak App</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
-    <div class="container">
-      <h1>Streak App</h1>
-      <form id="habit-form">
-        <input type="text" id="habit-name" placeholder="Habit name" required />
-        <input type="date" id="start-date" required />
-        <button type="submit">Add Habit</button>
-      </form>
-      <ul id="habit-list"></ul>
+    <h1>Welcome to My Streak Counter</h1>
+    <div id="streaks">
+      <div class="streak-item">
+        <span class="streak-date">Act: 2022-06-07</span>
+        <span class="streak-name">Smoking</span>
+      </div>
+      <div class="streak-item">
+        <span class="streak-date">Cycling: 2022-07-06</span>
+        <span class="streak-name">Cycling</span>
+      </div>
+      <div class="streak-item">
+        <span class="streak-date">2022-07-14</span>
+        <span class="streak-name">Healthy Eating</span>
+      </div>
+      <div class="streak-item">
+        <span class="streak-date">2022-07-14</span>
+        <span class="streak-name">Enough Sleep</span>
+      </div>
+      <div class="streak-item">
+        <span class="streak-date">2002-07-14</span>
+        <span class="streak-name">Taking Walks</span>
+      </div>
     </div>
-    <script src="app.js"></script>
   </body>
 </html>
