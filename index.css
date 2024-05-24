@@ -81,9 +81,9 @@ main {
   max-width: 40rem;
   margin: 1rem;
   position: relative;
-  background-color: white;
+  background-color: rgb(214, 234, 174);
   padding: 1rem;
-  border-radius: 0.5rem;
+  border-radius: 0.9rem;
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
@@ -95,7 +95,7 @@ main {
   display: inline;
 }
 #habitForm > button:last-child {
-  background-color: #3d8a8a;
+  background-color: #5d0e34;
   padding: 0.5rem 1rem;
   margin-top: 1rem;
   border-radius: 2rem;
