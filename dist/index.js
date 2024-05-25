@@ -171,21 +171,19 @@ const showAddHabitForm = () => {
   inputImageUrl.setAttribute("required", "true");
   submitBtn.setAttribute("type", "submit");
   labelName.textContent = "Habit Name*";
-  //   inputName.placeholder = "Habit Name";
+
   labelType.textContent = "Type*";
   labelFrequency.textContent = "Frequency*";
-  // inputFrequency.placeholder = "How often in a day?";
+
   labelGoal.textContent = "Goal*";
-  // inputGoal.placeholder = "What is your goal?";
+
   labelPriority.textContent = "Priority*";
   labelHabitImpact.textContent = "Habit Impact*";
-  // inputHabitImpact.placeholder = "How does this habit affect your life?";
+
   labelGoalImpact.textContent = "Goal Impact*";
-  // inputGoalImpact.placeholder =
-  // "How will achieving your goal impact your life?";
+
   labelStart.textContent = "Start | Stop Date*";
-  //   labelImageUrl.textContent = "Image URL*";
-  //   inputImageUrl.placeholder = "Enter path to image";
+
   submitBtn.textContent = "Add Habit";
   habitForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -201,7 +199,6 @@ const showAddHabitForm = () => {
       imagePath: inputImageUrl.value,
     };
     addHabit(habit);
-    // habitForm.reset();
   });
   closeBtn.addEventListener("click", () => {
     addHabitForm === null || addHabitForm === void 0
