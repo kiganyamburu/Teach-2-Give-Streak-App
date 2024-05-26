@@ -7,12 +7,6 @@ const habitList: HTMLDivElement | null = document.querySelector("#habitList");
 
 interface Habit {
   name: string;
-  type: "positive" | "negative";
-  frequency: string;
-  goal: string;
-  priority: "low" | "medium" | "high";
-  habitImpact: string;
-  goalImpact: string;
   start: string;
   imagePath: string;
 }
@@ -70,29 +64,8 @@ const addHabit = async (habit: Habit) => {
 
 const showAddHabitForm = () => {
   const habitForm: HTMLFormElement = document.createElement("form");
-  const closeBtn: HTMLButtonElement = document.createElement("button");
-  const closeImage: HTMLImageElement = document.createElement("img");
   const labelName: HTMLLabelElement = document.createElement("label");
   const inputName: HTMLInputElement = document.createElement("input");
-  const labelType: HTMLLabelElement = document.createElement("label");
-  const inputType: HTMLSelectElement = document.createElement("select");
-  const optionPositive: HTMLOptionElement = document.createElement("option");
-  const optionNegative: HTMLOptionElement = document.createElement("option");
-  const labelFrequency: HTMLLabelElement = document.createElement("label");
-  const inputFrequency: HTMLInputElement = document.createElement("input");
-  const labelGoal: HTMLLabelElement = document.createElement("label");
-  const inputGoal: HTMLInputElement = document.createElement("input");
-  const labelPriority: HTMLLabelElement = document.createElement("label");
-  const inputPriority: HTMLSelectElement = document.createElement("select");
-  const optionLow: HTMLOptionElement = document.createElement("option");
-  const optionMedium: HTMLOptionElement = document.createElement("option");
-  const optionHigh: HTMLOptionElement = document.createElement("option");
-  const labelHabitImpact: HTMLLabelElement = document.createElement("label");
-  const inputHabitImpact: HTMLTextAreaElement =
-    document.createElement("textarea");
-  const labelGoalImpact: HTMLLabelElement = document.createElement("label");
-  const inputGoalImpact: HTMLTextAreaElement =
-    document.createElement("textarea");
   const labelStart: HTMLLabelElement = document.createElement("label");
   const inputStart: HTMLInputElement = document.createElement("input");
   const labelImageUrl: HTMLLabelElement = document.createElement("label");
@@ -101,46 +74,11 @@ const showAddHabitForm = () => {
 
   addHabitForm?.style.height = "100vh";
   habitForm.setAttribute("id", "habitForm");
-  closeBtn.setAttribute("type", "button");
-  closeBtn.setAttribute("id", "closeBtn");
-  closeImage.setAttribute("src", "./assets/close.svg");
-  closeImage.setAttribute("alt", "Close");
   labelName.setAttribute("for", "habitName");
   inputName.setAttribute("type", "text");
   inputName.setAttribute("id", "habitName");
   inputName.setAttribute("name", "habitName");
   inputName.setAttribute("required", "true");
-  labelType.setAttribute("for", "type");
-  inputType.setAttribute("id", "type");
-  inputType.setAttribute("name", "type");
-  optionPositive.setAttribute("value", "positive");
-  optionPositive.textContent = "Positive";
-  optionNegative.setAttribute("value", "negative");
-  optionNegative.textContent = "Negative";
-  labelFrequency.setAttribute("for", "frequency");
-  inputFrequency.setAttribute("id", "frequency");
-  inputFrequency.setAttribute("name", "frequency");
-  inputFrequency.setAttribute("type", "text");
-  inputFrequency.setAttribute("required", "true");
-  labelGoal.setAttribute("for", "goal");
-  inputGoal.setAttribute("id", "goal");
-  inputGoal.setAttribute("name", "goal");
-  inputGoal.setAttribute("required", "true");
-  labelPriority.setAttribute("for", "priority");
-  inputPriority.setAttribute("id", "priority");
-  inputPriority.setAttribute("name", "priority");
-  optionLow.setAttribute("value", "low");
-  optionLow.textContent = "Low";
-  optionMedium.setAttribute("value", "medium");
-  optionMedium.textContent = "Medium";
-  optionHigh.setAttribute("value", "high");
-  optionHigh.textContent = "High";
-  labelHabitImpact.setAttribute("for", "habitImpact");
-  inputHabitImpact.setAttribute("id", "habitImpact");
-  inputHabitImpact.setAttribute("required", "true");
-  labelGoalImpact.setAttribute("for", "goalImpact");
-  inputGoalImpact.setAttribute("id", "goalImpact");
-  inputGoalImpact.setAttribute("required", "true");
   labelStart.setAttribute("for", "start");
   inputStart.setAttribute("id", "start");
   inputStart.setAttribute("name", "start");
@@ -154,17 +92,7 @@ const showAddHabitForm = () => {
 
   labelName.textContent = "Habit Name*";
   inputName.placeholder = "Habit Name";
-  labelType.textContent = "Type*";
-  labelFrequency.textContent = "Frequency*";
-  inputFrequency.placeholder = "How often in a day?";
-  labelGoal.textContent = "Goal*";
-  inputGoal.placeholder = "What is your goal?";
-  labelPriority.textContent = "Priority*";
-  labelHabitImpact.textContent = "Habit Impact*";
-  inputHabitImpact.placeholder = "How does this habit affect your life?";
-  labelGoalImpact.textContent = "Goal Impact*";
-  inputGoalImpact.placeholder =
-    "How will achieving your goal impact your life?";
+  ("How will achieving your goal impact your life?");
   labelStart.textContent = "Start | Stop Date*";
   labelImageUrl.textContent = "Image URL*";
   inputImageUrl.placeholder = "Enter path to image";
@@ -174,44 +102,15 @@ const showAddHabitForm = () => {
     e.preventDefault();
     const habit: Habit = {
       name: inputName.value,
-      type: inputType.value as "positive" | "negative",
-      frequency: inputFrequency.value,
-      goal: inputGoal.value,
-      priority: inputPriority.value as "low" | "medium" | "high",
-      habitImpact: inputHabitImpact.value,
-      goalImpact: inputGoalImpact.value,
       start: inputStart.value,
       imagePath: inputImageUrl.value,
     };
     addHabit(habit);
     // habitForm.reset();
   });
-  closeBtn.addEventListener("click", () => {
-    addHabitForm?.removeChild(habitForm);
-    addHabitForm?.style.height = "0";
-  });
 
-  closeBtn.appendChild(closeImage);
-  inputType.appendChild(optionPositive);
-  inputType.appendChild(optionNegative);
-  inputPriority.appendChild(optionLow);
-  inputPriority.appendChild(optionMedium);
-  inputPriority.appendChild(optionHigh);
-  habitForm.appendChild(closeBtn);
   habitForm.appendChild(labelName);
   habitForm.appendChild(inputName);
-  habitForm.appendChild(labelType);
-  habitForm.appendChild(inputType);
-  habitForm.appendChild(labelFrequency);
-  habitForm.appendChild(inputFrequency);
-  habitForm.appendChild(labelGoal);
-  habitForm.appendChild(inputGoal);
-  habitForm.appendChild(labelPriority);
-  habitForm.appendChild(inputPriority);
-  habitForm.appendChild(labelHabitImpact);
-  habitForm.appendChild(inputHabitImpact);
-  habitForm.appendChild(labelGoalImpact);
-  habitForm.appendChild(inputGoalImpact);
   habitForm.appendChild(labelStart);
   habitForm.appendChild(inputStart);
   habitForm.appendChild(labelImageUrl);

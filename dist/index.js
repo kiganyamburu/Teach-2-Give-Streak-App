@@ -90,27 +90,8 @@ const addHabit = (habit) =>
   });
 const showAddHabitForm = () => {
   const habitForm = document.createElement("form");
-  const closeBtn = document.createElement("button");
-  const closeImage = document.createElement("img");
   const labelName = document.createElement("label");
   const inputName = document.createElement("input");
-  const labelType = document.createElement("label");
-  const inputType = document.createElement("select");
-  const optionPositive = document.createElement("option");
-  const optionNegative = document.createElement("option");
-  const labelFrequency = document.createElement("label");
-  const inputFrequency = document.createElement("input");
-  const labelGoal = document.createElement("label");
-  const inputGoal = document.createElement("input");
-  const labelPriority = document.createElement("label");
-  const inputPriority = document.createElement("select");
-  const optionLow = document.createElement("option");
-  const optionMedium = document.createElement("option");
-  const optionHigh = document.createElement("option");
-  const labelHabitImpact = document.createElement("label");
-  const inputHabitImpact = document.createElement("textarea");
-  const labelGoalImpact = document.createElement("label");
-  const inputGoalImpact = document.createElement("textarea");
   const labelStart = document.createElement("label");
   const inputStart = document.createElement("input");
   const labelImageUrl = document.createElement("label");
@@ -120,46 +101,11 @@ const showAddHabitForm = () => {
     ? void 0
     : (addHabitForm.style.height = "100vh");
   habitForm.setAttribute("id", "habitForm");
-  closeBtn.setAttribute("type", "button");
-  closeBtn.setAttribute("id", "closeBtn");
-  closeImage.setAttribute("src", "./assets/close.svg");
-  closeImage.setAttribute("alt", "Close");
   labelName.setAttribute("for", "habitName");
   inputName.setAttribute("type", "text");
   inputName.setAttribute("id", "habitName");
   inputName.setAttribute("name", "habitName");
   inputName.setAttribute("required", "true");
-  labelType.setAttribute("for", "type");
-  inputType.setAttribute("id", "type");
-  inputType.setAttribute("name", "type");
-  optionPositive.setAttribute("value", "positive");
-  optionPositive.textContent = "Positive";
-  optionNegative.setAttribute("value", "negative");
-  optionNegative.textContent = "Negative";
-  labelFrequency.setAttribute("for", "frequency");
-  inputFrequency.setAttribute("id", "frequency");
-  inputFrequency.setAttribute("name", "frequency");
-  inputFrequency.setAttribute("type", "text");
-  inputFrequency.setAttribute("required", "true");
-  labelGoal.setAttribute("for", "goal");
-  inputGoal.setAttribute("id", "goal");
-  inputGoal.setAttribute("name", "goal");
-  inputGoal.setAttribute("required", "true");
-  labelPriority.setAttribute("for", "priority");
-  inputPriority.setAttribute("id", "priority");
-  inputPriority.setAttribute("name", "priority");
-  optionLow.setAttribute("value", "low");
-  optionLow.textContent = "Low";
-  optionMedium.setAttribute("value", "medium");
-  optionMedium.textContent = "Medium";
-  optionHigh.setAttribute("value", "high");
-  optionHigh.textContent = "High";
-  labelHabitImpact.setAttribute("for", "habitImpact");
-  inputHabitImpact.setAttribute("id", "habitImpact");
-  inputHabitImpact.setAttribute("required", "true");
-  labelGoalImpact.setAttribute("for", "goalImpact");
-  inputGoalImpact.setAttribute("id", "goalImpact");
-  inputGoalImpact.setAttribute("required", "true");
   labelStart.setAttribute("for", "start");
   inputStart.setAttribute("id", "start");
   inputStart.setAttribute("name", "start");
@@ -171,64 +117,24 @@ const showAddHabitForm = () => {
   inputImageUrl.setAttribute("required", "true");
   submitBtn.setAttribute("type", "submit");
   labelName.textContent = "Habit Name*";
-
-  labelType.textContent = "Type*";
-  labelFrequency.textContent = "Frequency*";
-
-  labelGoal.textContent = "Goal*";
-
-  labelPriority.textContent = "Priority*";
-  labelHabitImpact.textContent = "Habit Impact*";
-
-  labelGoalImpact.textContent = "Goal Impact*";
-
+  inputName.placeholder = "Habit Name";
+  ("How will achieving your goal impact your life?");
   labelStart.textContent = "Start | Stop Date*";
-
+  labelImageUrl.textContent = "Image URL*";
+  inputImageUrl.placeholder = "Enter path to image";
   submitBtn.textContent = "Add Habit";
   habitForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const habit = {
       name: inputName.value,
-      type: inputType.value,
-      frequency: inputFrequency.value,
-      goal: inputGoal.value,
-      priority: inputPriority.value,
-      habitImpact: inputHabitImpact.value,
-      goalImpact: inputGoalImpact.value,
       start: inputStart.value,
       imagePath: inputImageUrl.value,
     };
     addHabit(habit);
+    // habitForm.reset();
   });
-  closeBtn.addEventListener("click", () => {
-    addHabitForm === null || addHabitForm === void 0
-      ? void 0
-      : addHabitForm.removeChild(habitForm);
-    addHabitForm === null || addHabitForm === void 0
-      ? void 0
-      : (addHabitForm.style.height = "0");
-  });
-  closeBtn.appendChild(closeImage);
-  inputType.appendChild(optionPositive);
-  inputType.appendChild(optionNegative);
-  inputPriority.appendChild(optionLow);
-  inputPriority.appendChild(optionMedium);
-  inputPriority.appendChild(optionHigh);
-  habitForm.appendChild(closeBtn);
   habitForm.appendChild(labelName);
   habitForm.appendChild(inputName);
-  habitForm.appendChild(labelType);
-  habitForm.appendChild(inputType);
-  habitForm.appendChild(labelFrequency);
-  habitForm.appendChild(inputFrequency);
-  habitForm.appendChild(labelGoal);
-  habitForm.appendChild(inputGoal);
-  habitForm.appendChild(labelPriority);
-  habitForm.appendChild(inputPriority);
-  habitForm.appendChild(labelHabitImpact);
-  habitForm.appendChild(inputHabitImpact);
-  habitForm.appendChild(labelGoalImpact);
-  habitForm.appendChild(inputGoalImpact);
   habitForm.appendChild(labelStart);
   habitForm.appendChild(inputStart);
   habitForm.appendChild(labelImageUrl);
